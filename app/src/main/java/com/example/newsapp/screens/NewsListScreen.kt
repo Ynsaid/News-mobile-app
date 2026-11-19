@@ -37,30 +37,7 @@ import com.example.newsapp.R
 import com.example.newsapp.classes.Article
 import com.example.newsapp.ui.theme.RedPrimary
 
-@Composable
-fun NewsListScreen(
-    articles: List<Article>,
-    modifier: Modifier = Modifier,
-    onArticleClick: ((Article) -> Unit)? = null
-) {
-    LazyColumn(
-        modifier = modifier
-            .fillMaxSize()
-            .background(Color(0xFFF9FAFB))
-            .padding(horizontal = 20.dp, vertical = 12.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        items(
-            items = articles,
-            key = { article -> article.title + article.publishedAt }
-        ) { article ->
-            NewsItem(
-                article = article,
-                onClick = { onArticleClick?.invoke(article) }
-            )
-        }
-    }
-}
+
 
 @Composable
 fun NewsItem(
